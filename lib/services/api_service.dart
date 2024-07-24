@@ -1,8 +1,9 @@
+// lib/services/api_service.dart
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String _baseUrl = 'https://yourapi.com';
+  static const String _baseUrl = 'http://127.0.0.1:3000';
 
   static Future<bool> login(String email, String password) async {
     final response = await http.post(
@@ -26,14 +27,17 @@ class ApiService {
 
   static Future<bool> register(String username, String email, String password) async {
     final response = await http.post(
-      Uri.parse('$_baseUrl/register'),
+      Uri.parse('$_baseUrl/users'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
-      body: jsonEncode(<String, String>{
-        'username': username,
-        'email': email,
-        'password': password,
+      body: jsonEncode({
+        'user': {
+          'username': username,
+          'email': email,
+          'password': password,
+          'password_confirmation': password,
+        }
       }),
     );
 

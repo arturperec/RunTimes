@@ -24,9 +24,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         _passwordController.text,
       );
       if (success) {
-        // Navigate to login screen
+        Navigator.pushNamed(context, '/login');
       } else {
-        // Show error message
+        ScaffoldMessenger.of(context).showSnackBar(
+
+          SnackBar(content: Text('Registration failed. Please try again.')),
+
+        );
       }
     }
   }
