@@ -22,10 +22,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         _passwordController.text,
       );
       if (success) {
-        Navigator.pushNamed(context, '/home');
+        Navigator.pushReplacementNamed(context, '/main', arguments: _usernameController.text);
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Registration failed')),
+          const SnackBar(content: Text('Registration failed')),
         );
       }
     }
@@ -42,7 +42,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Register')),
+      appBar: AppBar(title: const Text('Register')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(

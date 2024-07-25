@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:email_validator/email_validator.dart';
 import '../services/api_service.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
@@ -29,16 +28,16 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
-  final _emailController = TextEditingController();
+  final _loginController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _isObscured = true;
   bool _isRememberMeChecked = false;
 
   Future<void> _login() async {
     if (_formKey.currentState?.validate() == true) {
-      bool success = await ApiService.login(_emailController.text, _passwordController.text);
+      bool success = await ApiService.login(_loginController.text, _passwordController.text);
       if (success) {
-        Navigator.pushNamed(context, '/home');
+        Navigator.pushReplacementNamed(context, '/main', arguments: _loginController.text);
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Login failed')),
@@ -55,7 +54,7 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   void dispose() {
-    _emailController.dispose();
+    _loginController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
@@ -67,13 +66,11 @@ class _LoginFormState extends State<LoginForm> {
       child: Column(
         children: [
           CustomTextField(
-            controller: _emailController,
+            controller: _loginController,
             labelText: 'Email or Username',
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter your email or username';
-              } else if (!EmailValidator.validate(value)) {
-                return 'Invalid email format';
               }
               return null;
             },
@@ -95,9 +92,12 @@ class _LoginFormState extends State<LoginForm> {
             },
           ),
           const SizedBox(height: 16),
-          CustomButton(
-            text: 'Login',
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blue, // set the background color to blue
+            ),
             onPressed: _login,
+            child: const Text('Login'),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

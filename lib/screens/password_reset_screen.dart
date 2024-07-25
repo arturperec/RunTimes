@@ -17,9 +17,14 @@ class _PasswordResetScreenState extends State<PasswordResetScreen> {
     if (_formKey.currentState?.validate() == true) {
       bool success = await ApiService.resetPassword(_emailController.text);
       if (success) {
-        // Navigate to login screen
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Password reset email sent')),
+        );
+        Navigator.pushNamed(context, '/login');
       } else {
-        // Show error message
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Password reset failed')),
+        );
       }
     }
   }
@@ -33,7 +38,7 @@ class _PasswordResetScreenState extends State<PasswordResetScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Reset Password')),
+      appBar: AppBar(title: const Text('Reset Password')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
 import 'screens/registration_screen.dart';
 import 'screens/password_reset_screen.dart';
+import 'screens/entry_screen.dart';
+import 'screens/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +19,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/login',
+      initialRoute: '/entry',
       routes: {
-        '/login': (context) => LoginScreen(),
+        '/entry': (context) => const EntryScreen(),
+        '/login': (context) => const LoginScreen(),
         '/register': (context) => RegistrationScreen(),
         '/password_reset': (context) => PasswordResetScreen(),
+        '/main': (context) => MainScreen(username: ModalRoute.of(context)!.settings.arguments as String),
       },
     );
   }
