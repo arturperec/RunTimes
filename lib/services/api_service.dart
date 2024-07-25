@@ -1,9 +1,9 @@
-// lib/services/api_service.dart
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String _baseUrl = 'http://127.0.0.1:3000';
+  static const String _baseUrl = 'http://10.0.2.2:3000';  // For emulator
+  // static const String _baseUrl = 'http://192.168.1.10:3000';  // Replace with your machine's local IP for physical device
 
   static Future<bool> login(String email, String password) async {
     final response = await http.post(
@@ -18,7 +18,6 @@ class ApiService {
     );
 
     if (response.statusCode == 200) {
-      // Save token and navigate to home screen
       return true;
     } else {
       return false;

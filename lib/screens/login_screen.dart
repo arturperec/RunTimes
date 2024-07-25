@@ -38,9 +38,11 @@ class _LoginFormState extends State<LoginForm> {
     if (_formKey.currentState?.validate() == true) {
       bool success = await ApiService.login(_emailController.text, _passwordController.text);
       if (success) {
-        // Navigate to home screen
+        Navigator.pushNamed(context, '/home');
       } else {
-        // Show error message
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Login failed')),
+        );
       }
     }
   }

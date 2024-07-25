@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:email_validator/email_validator.dart';
 import '../services/api_service.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
@@ -14,7 +13,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final _usernameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _confirmPasswordController = TextEditingController();
 
   Future<void> _register() async {
     if (_formKey.currentState?.validate() == true) {
@@ -24,12 +22,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         _passwordController.text,
       );
       if (success) {
-        Navigator.pushNamed(context, '/login');
+        Navigator.pushNamed(context, '/home');
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-
-          SnackBar(content: Text('Registration failed. Please try again.')),
-
+          SnackBar(content: Text('Registration failed')),
         );
       }
     }
@@ -40,7 +36,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     _usernameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    _confirmPasswordController.dispose();
     super.dispose();
   }
 
@@ -71,8 +66,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email';
-                  } else if (!EmailValidator.validate(value)) {
-                    return 'Invalid email format';
                   }
                   return null;
                 },
@@ -85,20 +78,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your password';
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: 16),
-              CustomTextField(
-                controller: _confirmPasswordController,
-                labelText: 'Confirm Password',
-                obscureText: true,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please confirm your password';
-                  } else if (value != _passwordController.text) {
-                    return 'Passwords do not match';
                   }
                   return null;
                 },
