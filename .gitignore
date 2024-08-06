@@ -90,3 +90,4 @@ yarn-debug.log*
 !/app/assets/builds/.keep
 frontend/build/app/intermediates/assets/debug/flutter_assets/assets/.env
 frontend/build/app/intermediates/flutter/debug/flutter_assets/assets/.env
+frontend/assets/.env
