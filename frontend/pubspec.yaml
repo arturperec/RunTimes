@@ -1,0 +1,22 @@
+name: run_times
+description: A new Flutter application for user login.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  email_validator: ^3.0.0
+  http: ^1.2.1
+  font_awesome_flutter: ^10.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
