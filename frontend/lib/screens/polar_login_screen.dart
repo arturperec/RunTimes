@@ -4,16 +4,18 @@ import '../services/polar_auth_service.dart';
 class PolarLoginScreen extends StatelessWidget {
   final PolarAuthService _polarAuthService = PolarAuthService();
 
+  PolarLoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Login with Polar')),
+      appBar: AppBar(title: const Text('Login with Polar')),
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
             await _polarAuthService.authenticate();
           },
-          child: Text('Login with Polar'),
+          child: const Text('Login with Polar'),
         ),
       ),
     );

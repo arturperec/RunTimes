@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/entry': (context) => const EntryScreen(),
         '/login': (context) => const LoginScreen(),
-        '/register': (context) => RegistrationScreen(),
-        '/password_reset': (context) => PasswordResetScreen(),
+        '/register': (context) => const RegistrationScreen(),
+        '/password_reset': (context) => const PasswordResetScreen(),
         '/main': (context) => MainScreen(username: ModalRoute.of(context)!.settings.arguments as String),
         '/polar_login': (context) => PolarLoginScreen(),
       },

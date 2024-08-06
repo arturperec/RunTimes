@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
 import '../services/api_service.dart';
 
 class EntryScreen extends StatelessWidget {
