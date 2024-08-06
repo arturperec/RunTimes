@@ -7,13 +7,18 @@ import 'screens/entry_screen.dart';
 import 'screens/main_screen.dart';
 import 'screens/polar_login_screen.dart';
 
-void main() async {
-  await dotenv.load(fileName: ".env");
+Future<void> main() async {
+  try {
+    await dotenv.load(fileName: ".env");
+    print('Environment variables loaded: ${dotenv.env}');
+  } catch (e) {
+    print('Failed to load .env file: $e');
+  }
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -13,8 +13,8 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->C:\Users\BlooberTeamSA\RunTimes\frontend\android\app\src\debug\AndroidManifest.xml:6:5-66
-15-->C:\Users\BlooberTeamSA\RunTimes\frontend\android\app\src\debug\AndroidManifest.xml:6:22-64
+15-->C:\Users\BlooberTeamSA\RunTimes\frontend\android\app\src\main\AndroidManifest.xml:2:5-66
+15-->C:\Users\BlooberTeamSA\RunTimes\frontend\android\app\src\main\AndroidManifest.xml:2:22-64
 16
 17    <permission
 17-->[androidx.core:core:1.13.1] C:\Users\BlooberTeamSA\.gradle\caches\transforms-3\68092c50d93ba4008ff635d638432562\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47

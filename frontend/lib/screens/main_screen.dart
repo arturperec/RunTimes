@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MainScreen extends StatelessWidget {
   final String username;
 
-  const MainScreen({Key? key, required this.username}) : super(key: key);
+  const MainScreen({super.key, required this.username});
 
   void _logout(BuildContext context) {
     // Clear the session or any relevant data

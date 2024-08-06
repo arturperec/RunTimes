@@ -13,7 +13,11 @@ class PolarLoginScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
-            await _polarAuthService.authenticate();
+            try {
+              await _polarAuthService.authenticate();
+            } catch (e) {
+              print('Error: $e');
+            }
           },
           child: const Text('Login with Polar'),
         ),

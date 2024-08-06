@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 
 class EntryScreen extends StatelessWidget {
-  const EntryScreen({Key? key}) : super(key: key);
+  const EntryScreen({super.key});
 
   Future<void> _guestLogin(BuildContext context) async {
     bool success = await ApiService.guestLogin();
