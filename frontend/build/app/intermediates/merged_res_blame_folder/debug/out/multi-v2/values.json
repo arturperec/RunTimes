@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.runtimes.run_times.app-mergeDebugResources-17:/values/values.xml",
+            "outputFile": "com.runtimes.run_times.app-mergeDebugResources-20:/values/values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\BlooberTeamSA\\.gradle\\caches\\transforms-3\\78fbd64af62dbdf102ba7c817970421b\\transformed\\jetified-window-1.0.0-beta04\\res\\values\\values.xml",

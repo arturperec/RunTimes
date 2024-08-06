@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.runtimes.run_times.app-mergeDebugResources-17:/values-pt/values-pt.xml",
+            "outputFile": "com.runtimes.run_times.app-mergeDebugResources-20:/values-pt/values-pt.xml",
             "map": [
                 {
                     "source": "C:\\Users\\BlooberTeamSA\\.gradle\\caches\\transforms-3\\68092c50d93ba4008ff635d638432562\\transformed\\core-1.13.1\\res\\values-pt\\values-pt.xml",

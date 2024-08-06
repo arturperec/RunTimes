@@ -5,11 +5,12 @@ import 'screens/registration_screen.dart';
 import 'screens/password_reset_screen.dart';
 import 'screens/entry_screen.dart';
 import 'screens/main_screen.dart';
+import 'screens/settings_screen.dart';
 import 'screens/polar_login_screen.dart';
 
 Future<void> main() async {
   try {
-    await dotenv.load(fileName: ".env");
+    await dotenv.load(fileName: "assets/.env");
     print('Environment variables loaded: ${dotenv.env}');
   } catch (e) {
     print('Failed to load .env file: $e');
@@ -30,10 +31,11 @@ class MyApp extends StatelessWidget {
       initialRoute: '/entry',
       routes: {
         '/entry': (context) => const EntryScreen(),
-        '/login': (context) => const LoginScreen(),
+        '/login': (context) => LoginScreen(),
         '/register': (context) => const RegistrationScreen(),
         '/password_reset': (context) => const PasswordResetScreen(),
         '/main': (context) => MainScreen(username: ModalRoute.of(context)!.settings.arguments as String),
+        '/settings': (context) => const SettingsScreen(),
         '/polar_login': (context) => PolarLoginScreen(),
       },
     );

@@ -6,7 +6,6 @@ class MainScreen extends StatelessWidget {
   const MainScreen({super.key, required this.username});
 
   void _logout(BuildContext context) {
-    // Clear the session or any relevant data
     Navigator.pushReplacementNamed(context, '/entry');
   }
 
@@ -41,17 +40,17 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text('Settings'),
+              onTap: () {
+                Navigator.pushNamed(context, '/settings');
+              },
+            ),
+            ListTile(
               leading: const Icon(Icons.logout),
               title: const Text('Logout'),
               onTap: () {
                 _logout(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.login),
-              title: const Text('Polar Login'),
-              onTap: () {
-                Navigator.pushNamed(context, '/polar_login');
               },
             ),
           ],
