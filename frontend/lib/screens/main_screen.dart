@@ -47,6 +47,13 @@ class MainScreen extends StatelessWidget {
                 _logout(context);
               },
             ),
+            ListTile(
+              leading: Icon(Icons.login),
+              title: Text('Polar Login'),
+              onTap: () {
+                Navigator.pushNamed(context, '/polar_login');
+              },
+            ),
           ],
         ),
       ),
