@@ -5,6 +5,8 @@ import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 
 class PasswordResetScreen extends StatefulWidget {
+  const PasswordResetScreen({super.key});
+
   @override
   _PasswordResetScreenState createState() => _PasswordResetScreenState();
 }

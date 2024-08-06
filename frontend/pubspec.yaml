@@ -1,5 +1,5 @@
 name: run_times
-description: A new Flutter application for user login.
+description: Running app made by runners for runners.
 version: 1.0.0+1
 
 environment:
@@ -9,12 +9,15 @@ dependencies:
   flutter:
     sdk: flutter
   email_validator: ^3.0.0
-  http: ^1.2.1
+  http: ^1.2.2
   font_awesome_flutter: ^10.4.0
+  url_launcher: ^6.1.10
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^2.0.1
 
 flutter:
   uses-material-design: true

@@ -17,7 +17,7 @@ class MainScreen extends StatelessWidget {
         title: Text('Hello ${username == 'guest' ? 'Guest' : username}!'),
         leading: Builder(
           builder: (context) => IconButton(
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
             onPressed: () {
               Scaffold.of(context).openDrawer();
             },
@@ -28,7 +28,7 @@ class MainScreen extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
@@ -41,10 +41,17 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Logout'),
+              leading: const Icon(Icons.logout),
+              title: const Text('Logout'),
               onTap: () {
                 _logout(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.login),
+              title: const Text('Polar Login'),
+              onTap: () {
+                Navigator.pushNamed(context, '/polar_login');
               },
             ),
           ],
