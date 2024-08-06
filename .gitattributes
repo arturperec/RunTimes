@@ -1,0 +1,2 @@
+# Track APK files using Git LFS
+*.apk filter=lfs diff=lfs merge=lfs -text
